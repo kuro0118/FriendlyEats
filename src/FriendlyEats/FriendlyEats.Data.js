@@ -2,9 +2,10 @@ import * as firebase from "firebase/app"
 import "firebase/firestore";
 
 export const addRestaurant = (data) => {
-  /*
-    TODO: Implement adding a document
-  */
+  // chips: restaurantsコレクションに対し、ドキュメントを作成する
+  // chips: 因みにドキュメントのデータ構造はオブジェクト型
+  const collection = firebase.firestore().collection('restaurants');
+  return collection.add(data);
 }
 
 export const getAllRestaurants = () => {
